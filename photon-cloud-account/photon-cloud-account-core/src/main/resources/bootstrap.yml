@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: account
+  cloud:
+    config:
+      uri: http://localhost:8888
+      failFast: true
+      label: master
+      profile: 
+#    stream:
+#      kafka:
+#        binder:
+#          brokers: 127.0.0.1:32768,127.0.0.1:32769,127.0.0.1:32770
+#          zkNodes: 127.0.0.1:2181
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+
+#management:
+#  security:
+#    enabled: false
+
+encrypt:
+  failOnError: true
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/

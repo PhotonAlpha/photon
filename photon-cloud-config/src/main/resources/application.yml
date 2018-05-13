@@ -1,0 +1,43 @@
+server:
+  port: 8888
+
+#jasypt:
+#  encryptor:
+#    password: Pass
+#    bean: encryptorBean
+ 
+spring:
+  application:
+    name: config-server
+    
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.com/o2killua/photon-repository
+          searchPaths: "*"
+          username: $JWTK{xx9HnbviT1Xwcr1Wwc6rrqoPij+Ocu/lG/5BbCwAV88=}
+          password: $JWTK{EohU2V9kUnMF2vK8PAceeGJDSynInlp6}
+#    stream:
+#      kafka:
+#        binder:a3kyk+fiW19vGj8Fw2FymQoQRZVxjoXo
+#          brokers: 127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094
+#          zkNodes: 127.0.0.1:2181        
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest      
+#    stream:
+#      instanceCount: 1
+#      instanceIndex: 0
+#      kafka: 1
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
