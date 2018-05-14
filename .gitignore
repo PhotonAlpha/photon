@@ -4,3 +4,7 @@ photon-cloud-config/target/
 rabbitmq-hello/
 
 photon-cloud-account/photon-cloud-account-core/target/
+
+photon-cloud-config/src/main/java/top/jetz/photon/security/EncypterTest\.java
+
+photon-cloud-config/src/main/java/top/jetz/photon/security/JwtkEncryptablePropertyResolver\.java
