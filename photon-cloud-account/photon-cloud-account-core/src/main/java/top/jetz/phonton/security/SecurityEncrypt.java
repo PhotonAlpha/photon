@@ -1,15 +1,8 @@
 package top.jetz.phonton.security;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Base64;
-import java.util.Base64.Decoder;
-import java.util.Base64.Encoder;
-
-import org.springframework.security.crypto.codec.Hex;
 import org.springframework.security.crypto.encrypt.BytesEncryptor;
 import org.springframework.security.crypto.encrypt.Encryptors;
 import org.springframework.security.crypto.keygen.KeyGenerators;
-import org.springframework.security.crypto.password.StandardPasswordEncoder;
 
 public class SecurityEncrypt {
     private static String password = "coooooool";

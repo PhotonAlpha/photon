@@ -3,10 +3,12 @@ package top.jetz.phonton;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @SpringBootApplication
 @RestController
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClientApplication {
     public static void main(String[] args) {
         SpringApplication.run(ClientApplication.class, args);
+//        new SpringApplicationBuilder().sources(ClientApplication.class).run(args);
     }
     
     @Value("${spring.datasource.url}")

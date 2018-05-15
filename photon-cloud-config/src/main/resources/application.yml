@@ -14,10 +14,16 @@ spring:
     config:
       server:
         git:
-          uri: https://gitlab.com/o2killua/photon-repository
+          uri: https://gitlab.com/o2killua/photon-repository.git
           searchPaths: "*"
-          username: $JWTK{xx9HnbviT1Xwcr1Wwc6rrqoPij+Ocu/lG/5BbCwAV88=}
-          password: $JWTK{EohU2V9kUnMF2vK8PAceeGJDSynInlp6}
+          username: $^.^jRBbP7g61GD7ZGoKyCa0hDU5ZtFCyr/jSAV/hkAinZk=
+          password: $^.^Qgbr9Y0YZYBh5xAZLgz+sM2uiz4RhE3r
+
+security:
+  user:
+    name: $^.^b7Ru/xLiQanu+PjwpYWdKw==
+    password: $^.^/QUJsbNV0XCkDV6b0Nb/fw==
+          
 #    stream:
 #      kafka:
 #        binder:a3kyk+fiW19vGj8Fw2FymQoQRZVxjoXo

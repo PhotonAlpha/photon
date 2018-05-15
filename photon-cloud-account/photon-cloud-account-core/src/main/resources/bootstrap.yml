@@ -1,12 +1,15 @@
 spring:
   application:
-    name: account
+    name: config-client
   cloud:
     config:
+      name: account
       uri: http://localhost:8888
       failFast: true
       label: master
-      profile: 
+      profile: dev 
+      username: $^.^fgkR1Uzd7ZGOMJK66e5gnQ==
+      password: $^.^3JcGuJCv5m/YuHLGKrdX6g==
 #    stream:
 #      kafka:
 #        binder:
