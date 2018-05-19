@@ -1,0 +1,28 @@
+version: '3'
+services:
+  nginx-proxy:
+    image: nginx
+    restart: always
+    networks:
+      - dbnet
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - simple-app
+  simple-app:
+    image: spring-boot-simple:v1
+    # restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - dbnet
+    external_links:
+      - mysql-db
+
+# must config here the -dbnet can work
+networks:
+  dbnet:
+    external: true
