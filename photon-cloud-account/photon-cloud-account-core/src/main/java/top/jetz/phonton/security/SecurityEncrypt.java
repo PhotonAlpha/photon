@@ -1,5 +1,10 @@
 package top.jetz.phonton.security;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
+
 import org.springframework.security.crypto.encrypt.BytesEncryptor;
 import org.springframework.security.crypto.encrypt.Encryptors;
 import org.springframework.security.crypto.keygen.KeyGenerators;
@@ -20,35 +25,35 @@ public class SecurityEncrypt {
         
     }
     
-//    public static void main(String[] args) throws UnsupportedEncodingException {
-////        String salt = KeyGenerators.string().generateKey();
-////        byte[] key = KeyGenerators.secureRandom(16).generateKey();
-////        String salt2 = new String(Hex.encode(key));
-////        System.out.println(salt);
-////        System.out.println(key);
-////        System.out.println(salt2);
-//        
-////        StandardPasswordEncoder encoder = new StandardPasswordEncoder("secret");
-////        String result = encoder.encode("myPassword");
-////        assertTrue(encoder.matches("myPassword", result));
-//        
-//        
-//        
-//        String salt = generateSalt();
-//        String password = "hello";
+    public static void main(String[] args) throws UnsupportedEncodingException {
+//        String salt = KeyGenerators.string().generateKey();
+//        byte[] key = KeyGenerators.secureRandom(16).generateKey();
+//        String salt2 = new String(Hex.encode(key));
 //        System.out.println(salt);
-//        BytesEncryptor encrypt = Encryptors.stronger(password, salt);
-//        byte[] enc = encrypt.encrypt(password.getBytes());
-//        Encoder encoder = Base64.getEncoder();
-//        String encryptStr = encoder.encodeToString(enc);
-//        
-//        
-//        Decoder decoder = Base64.getDecoder();
-//        byte[] dec = decoder.decode(encryptStr);
-//        byte[] result = encrypt.decrypt(dec);
-//        
-//        System.out.println(encryptStr);
-//        System.out.println(new String(result));
-//        
-//    }
+//        System.out.println(key);
+//        System.out.println(salt2);
+        
+//        StandardPasswordEncoder encoder = new StandardPasswordEncoder("secret");
+//        String result = encoder.encode("myPassword");
+//        assertTrue(encoder.matches("myPassword", result));
+        
+        
+        
+        String salt = generateSalt();
+        String password = "hello";
+        System.out.println(salt);
+        BytesEncryptor encrypt = Encryptors.stronger(password, salt);
+        byte[] enc = encrypt.encrypt(password.getBytes());
+        Encoder encoder = Base64.getEncoder();
+        String encryptStr = encoder.encodeToString(enc);
+        
+        
+        Decoder decoder = Base64.getDecoder();
+        byte[] dec = decoder.decode(encryptStr);
+        byte[] result = encrypt.decrypt(dec);
+        
+        System.out.println(encryptStr);
+        System.out.println(new String(result));
+        
+    }
 }

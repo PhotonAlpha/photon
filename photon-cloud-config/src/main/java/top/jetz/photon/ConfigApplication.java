@@ -12,13 +12,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.env.Environment;
 
-import top.jetz.photon.security.ResolverConfig;
+import top.jetz.photon.security.EncryptionConfig;
 
 
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableConfigServer
-@Import({ResolverConfig.class})
+@Import({EncryptionConfig.class})
 @RefreshScope
 public class ConfigApplication implements CommandLineRunner{
     

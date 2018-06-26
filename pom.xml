@@ -11,6 +11,7 @@
   	<module>photon-cloud-account</module>
   	<module>photon-cloud-bus</module>
   	<module>rabbitmq-hello</module>
+  	<module>photon-cloud-core</module>
   </modules>
   
  	<properties>
