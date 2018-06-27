@@ -3,8 +3,6 @@ package top.jetz.phonton;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.context.annotation.Import;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,8 +19,8 @@ public class ClientApplication {
     
     @Value("${spring.datasource.url}")
     private String url;
-    @Value("${spring.cloud.config.uri}")
-    private String config;
+    @Value("${spring.datasource.password_ma}")
+    private String password_ma;
     @Value("${spring.datasource.username}")
     private String username;
 //    cloud:
@@ -31,6 +29,6 @@ public class ClientApplication {
     
     @RequestMapping(value = "test", method = RequestMethod.GET)
     public String getParameter() {
-        return url+"\n"+config+"\n"+username;
+        return url+"\n"+password_ma+"\n"+username;
     }
 }

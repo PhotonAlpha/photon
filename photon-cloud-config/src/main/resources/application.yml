@@ -14,10 +14,11 @@ spring:
     config:
       server:
         git:
-          uri: https://gitlab.com/o2killua/photon-repository.git
+          uri: file:///C:/workspace/temporary/photon-repository-master
+#          uri: https://gitlab.com/o2killua/photon-repository.git
           searchPaths: "*"
-          username: $^.^jRBbP7g61GD7ZGoKyCa0hDU5ZtFCyr/jSAV/hkAinZk=
-          password: $^.^Qgbr9Y0YZYBh5xAZLgz+sM2uiz4RhE3r
+#          username: $^.^jRBbP7g61GD7ZGoKyCa0hDU5ZtFCyr/jSAV/hkAinZk=
+#          password: $^.^Qgbr9Y0YZYBh5xAZLgz+sM2uiz4RhE3r
 
 security:
   user:

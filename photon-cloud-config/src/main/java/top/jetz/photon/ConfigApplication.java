@@ -2,23 +2,17 @@ package top.jetz.photon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Import;
 import org.springframework.core.env.Environment;
-
-import top.jetz.photon.security.EncryptionConfig;
-
 
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableConfigServer
-@Import({EncryptionConfig.class})
 @RefreshScope
 public class ConfigApplication implements CommandLineRunner{
     
@@ -34,14 +28,14 @@ public class ConfigApplication implements CommandLineRunner{
     }
     
     
-    @Value("${spring.cloud.config.server.git.password}")
-    private String password;
+//    @Value("${spring.cloud.config.server.git.username}")
+//    private String username;
     
     @Override
     public void run(String... args) throws Exception {
         Environment environment = appCtx.getBean(Environment.class);
-        System.out.println("Environment's password: {}" + environment.getProperty("spring.cloud.config.server.git.password"));
-        System.out.println("MyService's password: {}" + password);
+//        System.out.println("Environment's password: {}" + environment.getProperty("spring.cloud.config.server.git.username"));
+//        System.out.println("MyService's password: {}" + username);
         System.out.println("Done!");
     }
     

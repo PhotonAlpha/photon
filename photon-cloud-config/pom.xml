@@ -59,7 +59,13 @@
 		  <groupId>org.springframework.cloud</groupId>
 		  <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
 		</dependency> -->
-
+		
+		<!-- 自定义插件依赖 -->
+		<dependency>
+			<groupId>top.jetz.photon</groupId>
+			<artifactId>photon-cloud-core</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
