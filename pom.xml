@@ -12,6 +12,7 @@
   	<module>photon-cloud-bus</module>
   	<module>rabbitmq-hello</module>
   	<module>photon-cloud-core</module>
+  	<module>netty-learning</module>
   </modules>
   
  	<properties>
