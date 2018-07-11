@@ -18,12 +18,18 @@ public class EchoServer {
     }
     
     public static void main(String[] args) throws Exception {
-        if(args.length != 1) {
-            System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
-            return ;
-        }
-        int port = Integer.parseInt(args[0]); //1
-        new EchoServer(port).start();   //2
+//        if(args.length != 1) {
+//            System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
+//            return ;
+//        }
+//        int port = Integer.parseInt(args[0]); //1
+//        new EchoServer(port).start();   //2
+        Double a = 123.1;
+        Double b = 123.1;
+        System.out.println(EchoServer.multiply(a, b));
+    }
+    public static Double multiply(Double a, Double b) {
+        return   a * b;
     }
     
     public void start() throws Exception {
@@ -48,5 +54,6 @@ public class EchoServer {
             group.shutdownGracefully().sync();  //10
         }
     }
+    
     
 }
