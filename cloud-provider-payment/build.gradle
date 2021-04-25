@@ -1,0 +1,18 @@
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+//    implementation ('org.springframework.cloud:spring-cloud-starter-zookeeper-discovery')
+//    implementation ('org.springframework.cloud:spring-cloud-starter-zookeeper-discovery') {
+//        exclude group: 'org.apache.zookeeper', module: 'zookeeper'
+//    }
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+//    compile 'com.alibaba:druid-spring-boot-starter'
+//    compile 'com.alibaba:druid-spring-boot-starter:1.1.17'
+    compile 'mysql:mysql-connector-java'
+
+    implementation project(":cloud-api-common")
+    implementation project(":cloud-api-core")
+}

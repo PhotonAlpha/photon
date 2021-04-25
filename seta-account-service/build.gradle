@@ -1,0 +1,24 @@
+dependencies {
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+    //   sentinel 后续持久化用到
+    implementation 'com.alibaba.csp:sentinel-datasource-nacos'
+////    持久化
+//    implementation 'com.alibaba.csp:sentinel-core'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+    implementation ('com.alibaba.cloud:spring-cloud-starter-alibaba-seata') {
+        exclude group: 'io.seata', module: 'seata-all'
+        exclude group: 'io.seata', module: 'seata-spring-boot-starter'
+    }
+    // 使用本地对应版本
+    implementation group: 'io.seata', name: 'seata-spring-boot-starter', version: '1.4.0'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator'
+
+//    compile 'com.alibaba:druid-spring-boot-starter:1.1.17'
+
+    implementation project(":cloud-api-common")
+}

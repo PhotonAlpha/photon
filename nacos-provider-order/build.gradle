@@ -1,0 +1,12 @@
+dependencies {
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    //    持久化
+    implementation 'com.alibaba.csp:sentinel-core'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator'
+
+    implementation project(":cloud-api-common")
+}

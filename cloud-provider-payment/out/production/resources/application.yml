@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: cloud-provider-payment
+  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/my-cloud?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: root
+    password: admin
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 # 采样值介于0到1之间，1表示全部采集
+
+eureka:
+  client:
+    register-with-eureka: true #true 表示将自己注册进EurekaServer
+    fetch-registry: true #true 表示抓取已有注册信息，职责是维护实例，并不需要去检索服务
+    service-url:
+      #      设置与eureka server 交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://ethan-primary.com:7001/eureka/,http://ethan-secondary.com:7002/eureka/

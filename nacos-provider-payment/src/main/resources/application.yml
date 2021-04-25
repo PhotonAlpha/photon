@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: nacos-provider-payment
+  datasource:
+    #    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/my-cloud?characterEncoding=UTF-8&useUnicode=true&useSSL=false
+    username: root
+    password: admin
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 # 采样值介于0到1之间，1表示全部采集
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8088 #配置sentinel dashboard地址
+        port: 8719 #  默认8719端口,加入被占用会自动从8719开始一次+1扫描,直至找到未被占用的端口
+      datasource:
+        ds1:
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name}
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

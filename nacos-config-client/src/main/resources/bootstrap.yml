@@ -1,0 +1,23 @@
+server:
+  port: 3377
+
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+#    config:
+#      label: main
+#      name: config #配置文件名
+#      profile: dev #读取后缀名称，  上述综合：main分支上config-dev.yml的配置文件被读取 http://localhost:3344/main/config-dev.yml
+#      uri: http://localhost:3344 #配置中心地址
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yml # 指定yaml格式的配置
+        group: TEST_GROUP
+#        namespace: 392eae2f-792f-4857-9ddf-5563bd2e1726
+
+# ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
+# nacos-config-client-dev.yml

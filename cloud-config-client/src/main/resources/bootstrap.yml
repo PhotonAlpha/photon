@@ -1,0 +1,30 @@
+server:
+  port: 3355
+
+eureka:
+  client:
+    service-url:
+      #      设置与eureka server 交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://ethan-primary.com:7001/eureka/,http://ethan-secondary.com:7002/eureka/
+
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: main
+      name: config #配置文件名
+      profile: dev #读取后缀名称，  上述综合：main分支上config-dev.yml的配置文件被读取 http://localhost:3344/main/config-dev.yml
+      uri: http://localhost:3344 #配置中心地址
+  #      添加配置信息
+  rabbitmq:
+    addresses: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
