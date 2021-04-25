@@ -1,0 +1,10 @@
+dependencies {
+    compile 'cn.hutool:hutool-all:5.5.4'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+
+    compile 'mysql:mysql-connector-java'
+}
+
+//被依赖的项目一定要配置jar.enabled=true,否则会编译失败
+jar.enabled=true

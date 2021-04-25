@@ -1,0 +1,25 @@
+server:
+  port: 8401
+
+spring:
+  application:
+    name: sentinel-service
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 # 采样值介于0到1之间，1表示全部采集
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8088 #配置sentinel dashboard地址
+        port: 8719 #  默认8719端口,加入被占用会自动从8719开始一次+1扫描,直至找到未被占用的端口
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -1,0 +1,13 @@
+dependencies {
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+//   sentinel 后续持久化用到
+    implementation 'com.alibaba.csp:sentinel-datasource-nacos'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator'
+
+}

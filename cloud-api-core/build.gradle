@@ -1,0 +1,7 @@
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+}
+
+//被依赖的项目一定要配置jar.enabled=true,否则会编译失败
+jar.enabled=true
+

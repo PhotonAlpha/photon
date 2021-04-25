@@ -1,0 +1,38 @@
+server:
+  port: 8102
+
+eureka:
+  client:
+    register-with-eureka: false #true 表示将自己注册进EurekaServer
+    fetch-registry: true #true 表示抓取已有注册信息，职责是维护实例，并不需要去检索服务
+    service-url:
+      #      设置与eureka server 交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://ethan-primary.com:7001/eureka/,http://ethan-secondary.com:7002/eureka/
+  instance:
+    instance-id: order8102
+    prefer-ip-address: true #访问路径可以显示IP地址
+
+ribbon:
+#  建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+  ReadTimeout: 5000
+#  指的是建立连接后从服务器读取到可用资源所用的时间
+  ConnectTimeout: 5000
+#  配置Feign日志级别
+logging:
+  level:
+#    feign日志以什么级别监控哪个接口
+    com.ethan.order.service.PaymentFeignService: debug
+
+#用于服务降级 在注解@FeignClient中添加fallbackFactory属性值
+feign:
+  hystrix:
+    enabled: true
+spring:
+  application:
+    name: cloud-provider-openfeign-order
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      probability: 1 # 采样值介于0到1之间，1表示全部采集
+

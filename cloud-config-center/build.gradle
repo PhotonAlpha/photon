@@ -1,0 +1,10 @@
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    //添加spring cloud bus
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+
+    compile group: 'org.springframework.boot', name: 'spring-boot-actuator'
+
+    implementation project(":cloud-api-core")
+}
